@@ -1,0 +1,102 @@
+.body{
+    background-image: url(../assets/imgs/fundoHome.jpg);
+    
+}
+
+.bordaDireita{
+    text-align: center;
+    border-right-style: solid ;
+    border-width: thin;
+    border-color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gastei{
+    text-align: center;
+}
+
+button{
+    width: 48.4vw;
+    position: fixed;
+}
+
+.centro{
+    max-height: 124vw;
+    overflow: scroll;
+}
+
+.cardsGanhei{
+    border-radius: 4vw;
+    background-color: rgb(195, 255, 193);
+    height: 40vw;
+       
+}
+
+.cardsGastei{
+    border-radius: 4vw;
+    background-color: rgb(255, 193, 193);
+    height: 40vw;
+}
+
+.textCard{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 6vw;
+}
+
+.vazio{
+    text-align: center;
+    margin-top: 40vw;
+    color: blue;
+}
+
+.btnEdit{
+    width: 13vw;
+    margin-left: 75vw;
+    margin-top: -45vw;
+
+}
+
+.btnTrash{
+    width: 13vw;
+    margin-left: 75vw;
+    margin-top: -30vw;
+}
+
+.btnDetalhes{
+    border-radius: 10vw;
+}
+
+.totalSaldo{
+    font-size: 4.3vw;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #488aff;
+    max-width: 25vw;
+}
+
+.totalGanho{
+    font-size: 4.3vw;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #32db64;
+    max-width: 25vw;
+    
+}
+
+.totalGasto{
+    font-size: 4.3vw;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f53d3d;
+    max-width: 25vw;
+}

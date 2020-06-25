@@ -1,0 +1,50 @@
+<ion-content class="bodyy">
+
+  <ion-toolbar color="danger" icon-start>
+    <ion-title>
+      <ion-icon name="md-trending-down"></ion-icon>
+      DESPESA FINANCEIRA
+    </ion-title>
+  </ion-toolbar>
+
+  <div class="centrooo" *ngIf="gasteiDb.length > 0; else estadoVazio">
+    <ion-card class="cardsGasteii" *ngFor="let gastei of gasteiDb">
+      <ion-card-content>
+        <ion-card-title class="textCard">
+          Descrição: {{gastei.descricaoP}} 
+        </ion-card-title>
+        <p class="textCard">
+          Preço: R$ {{gastei.precoP}} 
+        </p>
+        <p class="textCard">
+          Data: {{gastei.dataP}} 
+        </p>
+        <p class="textCard">
+          Categoria: {{gastei.categoriaP}} 
+        </p>
+  
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #estadoVazio>
+    <h3 class="vazio">Você não tem dados adicionados!<br></h3>
+  </ng-template>
+  <ng-template #estadoVazioo>
+    <h3 class="vazio">Volte para o inicio e clique no botão Gastei para adicionar!<br></h3>
+  </ng-template>
+
+  <ion-footer>
+  <div class="precoGasto" *ngIf="totalGastei > 0; else estadoVazioo">
+    <h4>Você já Gastou: R$ {{totalGastei}} </h4>
+  </div>
+  
+  
+    <button ion-button full (click)="voltar()" icon-start>
+      <ion-icon name="md-arrow-round-back"></ion-icon>
+      Voltar
+    </button>
+  </ion-footer>
+
+
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-content class="bodyy">
+
+  <ion-toolbar color="secondary" icon-start>
+    <ion-title>
+      <ion-icon name="md-trending-up"></ion-icon>
+      RECEITA FINANCEIRA
+    </ion-title>
+  </ion-toolbar>
+
+  <div class="centrooo"  *ngIf="ganheiDb.length > 0; else estadoVazio">
+    <ion-card class="cardsGanheii" *ngFor="let ganhei of ganheiDb">
+      <ion-card-content>
+        <ion-card-title class="textCard">
+          Descrição: {{ganhei.descricaoG}}
+        </ion-card-title>
+        <p class="textCard">
+          Preço: R$ {{ganhei.precoG}}
+        </p>
+        <p class="textCard">
+          Data: {{ganhei.dataG}}
+        </p>
+        <p class="textCard">
+          Categoria: {{ganhei.categoriaG}}
+        </p>
+  
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #estadoVazio>
+    <h3 class="vazio">Você não tem dados adicionados!<br></h3>
+  </ng-template>
+  <ng-template #estadoVazioo>
+    <h3 class="vazio">Volte para o inicio e clique no botão Ganhei para adicionar!<br></h3>
+  </ng-template>
+
+  <ion-footer>
+  <div class="precoGanho" *ngIf="totalGanhei > 0; else estadoVazioo">
+    <h4>Você já Ganhou: R$ {{totalGanhei}} </h4>
+  </div>
+  
+  
+    <button ion-button full (click)="voltar()" icon-start>
+      <ion-icon name="md-arrow-round-back"></ion-icon>
+      Voltar
+    </button>
+  </ion-footer>
+
+
+</ion-content>

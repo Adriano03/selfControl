@@ -1,0 +1,73 @@
+<ion-toolbar ion-toolbar color="danger" icon-start>
+  <ion-icon name="md-trending-down"></ion-icon>
+  GASTEI
+</ion-toolbar>
+
+<ion-content padding class="corFundob">
+
+  <form class="form" [formGroup]="form" (submit)="submitForm()">
+    <div class="centroo">
+      <ion-item>
+        <ion-label floating color="dark">
+          Descrição..
+        </ion-label>
+        <ion-input type="text" formControlName="descricaoP"></ion-input>
+      </ion-item>
+      <small *ngIf="descricaoP.hasError('required')&& descricaoP.touched" ion-text color="danger">
+        *Campo Descrição é Obrigatório!
+      </small>
+      <small *ngIf="descricaoP.hasError('maxlength')" ion-text color="danger">
+        *Campo Descrição com Máximo de 20 caracteres!
+      </small>
+
+      <ion-item>
+        <ion-label floating color="dark">
+          Preço..
+        </ion-label>
+        <ion-input type="text" formControlName="precoP"></ion-input>
+      </ion-item>
+      <small *ngIf="precoP.hasError('required')&& precoP.touched" ion-text color="danger">
+        *Campo Preço é Obrigatório!
+      </small>
+      <small *ngIf="precoP.hasError('maxlength')" ion-text color="danger">
+        *Campo Preço com Máximo de 8 Digitos!
+      </small>
+
+      <ion-item>
+        <ion-label floating color="dark">
+          Data..
+        </ion-label>
+        <ion-input mask="00/00/0000" type="string" formControlName="dataP"></ion-input>
+      </ion-item>
+      <small *ngIf="dataP.hasError('required')&& dataP.touched" ion-text color="danger">
+        *Campo Data é Obrigatório!
+      </small>
+      <small *ngIf="dataP.hasError('minlength')" ion-text color="danger">
+        *Campo Data com Mínimo de 6 Digitos!
+      </small>
+
+      <ion-item>
+        <ion-label floating color="dark">
+          Categoria..
+        </ion-label>
+        <ion-input type="text" formControlName="categoriaP"></ion-input>
+      </ion-item>
+      <small *ngIf="categoriaP.hasError('maxlength')&& categoriaP.touched" ion-text color="danger">
+        *Campo Categoria com Máximo de 20 caracteres!
+      </small>
+    </div>
+
+    <ion-footer>
+      <button class="botao" ion-button large full color="danger" icon-start type="submit">
+        <ion-icon name="md-checkmark"></ion-icon>
+        Salvar
+      </button>
+
+      <button ion-button type="button" large full color="light" icon-start (click)="fechar()">
+        <ion-icon class="icone" name="md-close-circle"></ion-icon>
+      </button>
+    </ion-footer>
+
+  </form>
+
+</ion-content>

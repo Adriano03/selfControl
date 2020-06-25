@@ -1,0 +1,107 @@
+<ion-content class="body">
+  
+  <ion-row>
+    <ion-col>
+      <div class="bordaDireita">
+        <h5>
+          <ion-note color="primary">Saldo</ion-note>
+          <p class="totalSaldo">R$ {{totalSaldo}}</p>
+        </h5>
+      </div>
+    </ion-col>
+
+    <ion-col>
+      <div class="bordaDireita">
+        <h5>
+          <ion-note color="danger">Gastos</ion-note>
+          <p class="totalGasto">R$ {{totalGastei}}</p>
+        </h5>
+      </div>
+    </ion-col>
+
+    <ion-col>
+      <div class="gastei">
+        <h5>
+          <ion-note color="secondary">Ganhos</ion-note>
+          <p class="totalGanho">R$ {{totalGanhei}}</p>
+        </h5>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <button class="btnDetalhes" ion-button full (click)="navegarDetalhes()"> Visualizar Detalhes</button>
+
+  <div class="centro" *ngIf="ganheiDb.length || gasteiDb.length > 0; else estadoVazio">
+
+    <ion-card *ngFor="let ganhei of ganheiDb" class="cardsGanhei" >
+      <ion-card-content>
+        <ion-card-title class="textCard">
+          Descrição: {{ganhei.descricaoG}}
+        </ion-card-title>
+        <p class="textCard">
+          Preço: R$ {{ganhei.precoG}}
+        </p>
+        <p class="textCard">
+          Data: {{ganhei.dataG}}
+        </p>
+        <p class="textCard">
+          Categoria: {{ganhei.categoriaG}}
+        </p>  
+
+        <button ion-button color="secondary" clear icon-only (click)="editarGanhei(ganhei._id)" class="btnEdit">
+          <ion-icon name='md-create' is-active="false"></ion-icon>
+        </button>
+
+        <button ion-button color="danger" clear icon-only (click)='confExcluirGanhei(ganhei._id)' class="btnTrash">
+          <ion-icon name='trash' is-active="false"></ion-icon>
+        </button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngFor="let gastei of gasteiDb" class="cardsGastei">
+      <ion-card-content>
+        <ion-card-title class="textCard">
+          Descrição: {{gastei.descricaoP}}
+        </ion-card-title>
+        <p class="textCard">
+          Preço: R$ {{gastei.precoP}}
+        </p>
+        <p class="textCard">
+          Data: {{gastei.dataP}}
+        </p>
+        <p class="textCard">
+          Categoria: {{gastei.categoriaP}}
+        </p>
+
+        <button ion-button color="secondary" clear icon-only (click)="editarGastei(gastei._id)" class="btnEdit">
+          <ion-icon name='md-create' is-active="false"></ion-icon>
+        </button>
+
+        <button ion-button color="danger" clear icon-only (click)="confExcluirGastei(gastei._id)" class="btnTrash">
+          <ion-icon name='trash' is-active="false"></ion-icon>
+        </button>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <ng-template #estadoVazio>
+    <h3 class="vazio">Ainda não há registro a serem exibidos!</h3>
+  </ng-template>
+
+
+
+  <ion-footer>
+    <button class="botaoBaixo" ion-button color="secondary" icon-start (click)="navegarGanhei()">
+      <ion-icon name="arrow-up"></ion-icon>
+      Ganhei
+    </button>
+    <button class="botaoBaixo" ion-button color="danger" icon-start (click)="navegarGastei()">
+      <ion-icon name="arrow-down"></ion-icon>
+      Gastei
+    </button>
+  </ion-footer>
+
+</ion-content>

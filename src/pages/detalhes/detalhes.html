@@ -1,0 +1,29 @@
+<ion-content class="body">
+
+  <ion-toolbar color="primary" icon-start>
+    <ion-title>
+      <ion-icon name="md-list-box"></ion-icon>
+      DETALHES
+    </ion-title>
+  </ion-toolbar>
+
+  
+  <div class="grafico"><canvas class="canvas" id="chartPie"></canvas></div>
+
+
+  <ion-footer>
+    <button ion-button color="danger" outline icon-only (click)='voltar()' class="btnVoltar">
+      <ion-icon name='md-arrow-round-back' is-active="false"></ion-icon>
+    </button>
+
+    <button ion-button color="secondary" icon-start class="btnDetail" (click)="navegarGanhei()">
+      <ion-icon name='arrow-up'></ion-icon>
+      Detalhar Ganho
+    </button>
+    <button ion-button color="danger" class="btnDetail" icon-start (click)="navegarGastei()">
+      <ion-icon name='arrow-down'></ion-icon>
+      Detalhar Gasto
+    </button>
+
+  </ion-footer>
+</ion-content>
