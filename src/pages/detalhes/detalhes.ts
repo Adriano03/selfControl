@@ -20,7 +20,7 @@ export class DetalhesPage {
     this.total = navParams.get('total');
     this.ganho = navParams.get('ganhei');
     this.gasto = navParams.get('gastei');
-   }
+    }
 
    total = 0;
    ganho = 0;

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroGanheiProvider } from '../../providers/cadastro-ganhei/cadastro-ganhei';
 import { Http } from '@angular/http';
-
+import sortBy from 'sort-by';
 
 @IonicPage()
 @Component({
@@ -44,7 +44,7 @@ export class DetalhesGanheiPage {
 
     this.CadastroGanheiProvider.guardaGanhei(this.ganheiDb);
     this.totalGanho();
-
+    this.ordeyByGanhei();
   }
 
   totalGanho(){
@@ -53,6 +53,10 @@ export class DetalhesGanheiPage {
       this.totalGanhei += +item.precoG;
       
     }
+  }
+
+  ordeyByGanhei(){
+    this.ganheiDb.sort(sortBy("descricaoG"));
   }
 
 

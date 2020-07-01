@@ -63,9 +63,7 @@ import { DetalhesGasteiPage } from '../pages/detalhes-gastei/detalhes-gastei';
     CadastroGanheiProvider,
     CadastroGasteiProvider,
     AngularFireDatabase,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-   
-    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},    
   ]
 })
 export class AppModule {}

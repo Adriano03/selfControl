@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { CadastroGasteiProvider } from '../../providers/cadastro-gastei/cadastro-gastei';
-
+import sortBy from 'sort-by';
 
 
 @IonicPage()
@@ -43,10 +43,17 @@ export class DetalhesGasteiPage {
       dados[i]._id = i
       return dados[i];
 
+      
+
     });
 
     this.CadastroGasteiProvider.guardaGastei(this.gasteiDb);
     this.totalGasto();
+    this.ordeyByGastei();
+  }
+
+  ordeyByGastei(){
+    this.gasteiDb.sort(sortBy("descricaoP"));
   }
 
   totalGasto() {

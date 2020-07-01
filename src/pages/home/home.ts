@@ -9,7 +9,7 @@ import { CadastroGanheiProvider } from '../../providers/cadastro-ganhei/cadastro
 import { CadastroGasteiProvider } from '../../providers/cadastro-gastei/cadastro-gastei';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { DetalhesPage } from '../detalhes/detalhes';
-
+import sortBy from 'sort-by';
 
 @Component({
   selector: 'page-home',
@@ -39,13 +39,12 @@ export class HomePage {
 
 
   ionViewWillEnter() {
-
+    
   }
 
   ngOnInit() {
     this.pegarDadosGanhei();
     this.pegarDadosGastei();
-
   }
 
   ionViewDidLoad() {
@@ -84,7 +83,10 @@ export class HomePage {
 
 
     this.totalGanho();
-    this.saldoTotal();
+    this.saldoTotal();   
+    
+
+    this.ordeyByGanhei();
 
   }
 
@@ -99,8 +101,21 @@ export class HomePage {
 
     this.totalGasto();
     this.saldoTotal();
+    this.saldoNegativo();
+    this.ordeyByGastei();
+    
+  }
 
-    if (this.totalSaldo < 0) {
+  ordeyByGanhei(){
+    this.ganheiDb.sort(sortBy("descricaoG"));
+  }
+
+  ordeyByGastei(){
+    this.gasteiDb.sort(sortBy("descricaoP"));
+  }
+
+  async saldoNegativo(){
+     if (this.totalSaldo <= -1) {
       this.alertCrtl
         .create({
           title: "ATENÇÃO",
@@ -114,7 +129,6 @@ export class HomePage {
         })
         .present();
     }
-
   }
 
   totalGanho() {
@@ -157,7 +171,7 @@ export class HomePage {
     this.alertCrtl
       .create({
         title: "Excluir",
-        subTitle: "Deseja Realmente Excluir",
+        subTitle: "Deseja Realmente Excluir ?",
 
         buttons: [
           {
@@ -180,7 +194,7 @@ export class HomePage {
     this.alertCrtl
       .create({
         title: "Excluir",
-        subTitle: "Deseja Realmente Excluir",
+        subTitle: "Deseja Realmente Excluir ?",
 
         buttons: [
           {

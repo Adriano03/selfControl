@@ -29,35 +29,12 @@
     </ion-col>
   </ion-row>
 
-  <button class="btnDetalhes" ion-button full (click)="navegarDetalhes()"> Visualizar Detalhes</button>
+  <button class="btnDetalhes" ion-button full icon-start (click)="navegarDetalhes()">
+    <ion-icon name="md-podium"></ion-icon>
+     Visualizar Detalhes
+    </button>
 
   <div class="centro" *ngIf="ganheiDb.length || gasteiDb.length > 0; else estadoVazio">
-
-    <ion-card *ngFor="let ganhei of ganheiDb" class="cardsGanhei" >
-      <ion-card-content>
-        <ion-card-title class="textCard">
-          Descrição: {{ganhei.descricaoG}}
-        </ion-card-title>
-        <p class="textCard">
-          Preço: R$ {{ganhei.precoG}}
-        </p>
-        <p class="textCard">
-          Data: {{ganhei.dataG}}
-        </p>
-        <p class="textCard">
-          Categoria: {{ganhei.categoriaG}}
-        </p>  
-
-        <button ion-button color="secondary" clear icon-only (click)="editarGanhei(ganhei._id)" class="btnEdit">
-          <ion-icon name='md-create' is-active="false"></ion-icon>
-        </button>
-
-        <button ion-button color="danger" clear icon-only (click)='confExcluirGanhei(ganhei._id)' class="btnTrash">
-          <ion-icon name='trash' is-active="false"></ion-icon>
-        </button>
-
-      </ion-card-content>
-    </ion-card>
 
     <ion-card *ngFor="let gastei of gasteiDb" class="cardsGastei">
       <ion-card-content>
@@ -85,10 +62,36 @@
       </ion-card-content>
     </ion-card>
 
+    <ion-card *ngFor="let ganhei of ganheiDb" class="cardsGanhei" >
+      <ion-card-content>
+        <ion-card-title class="textCard">
+          Descrição: {{ganhei.descricaoG}}
+        </ion-card-title>
+        <p class="textCard">
+          Preço: R$ {{ganhei.precoG}}
+        </p>
+        <p class="textCard">
+          Data: {{ganhei.dataG}}
+        </p>
+        <p class="textCard">
+          Categoria: {{ganhei.categoriaG}}
+        </p>  
+
+        <button ion-button color="secondary" clear icon-only (click)="editarGanhei(ganhei._id)" class="btnEdit">
+          <ion-icon name='md-create' is-active="false"></ion-icon>
+        </button>
+
+        <button ion-button color="danger" clear icon-only (click)='confExcluirGanhei(ganhei._id)' class="btnTrash">
+          <ion-icon name='trash' is-active="false"></ion-icon>
+        </button>
+
+      </ion-card-content>
+    </ion-card>
+
   </div>
 
   <ng-template #estadoVazio>
-    <h3 class="vazio">Ainda não há registro a serem exibidos!</h3>
+    <h3 class="vazio">Ainda não há registros a serem exibidos!</h3>
   </ng-template>
 
 

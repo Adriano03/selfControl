@@ -24,7 +24,7 @@
         <ion-label floating color="dark">
           Preço..
         </ion-label>
-        <ion-input type="text" formControlName="precoG"></ion-input>
+        <ion-input type="text" mask="0000000000" formControlName="precoG"></ion-input>
       </ion-item>
       <small *ngIf="precoG.hasError('required')&& precoG.touched" ion-text color="danger">
         *Campo Preço é Obrigatório!
