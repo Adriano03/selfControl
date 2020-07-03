@@ -31,6 +31,10 @@ button{
     border-radius: 4vw;
     background-color: rgb(195, 255, 193);
     height: 40vw;
+    border-style: solid;
+    border-color:green;
+    border-width: thin;
+    
        
 }
 
@@ -38,6 +42,9 @@ button{
     border-radius: 4vw;
     background-color: rgb(255, 193, 193);
     height: 40vw;
+    border-style: solid;
+    border-color: red;
+    border-width: thin;
 }
 
 .textCard{
@@ -67,7 +74,7 @@ button{
 }
 
 .btnDetalhes{
-    border-radius: 10vw;
+    border-radius: 4vw;
 }
 
 .totalSaldo{
