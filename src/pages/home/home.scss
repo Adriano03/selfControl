@@ -1,5 +1,7 @@
 .body{
     background-image: url(../assets/imgs/fundoHome.jpg);
+    background-repeat: no-repeat;
+    background-size: 150vw;
     
 }
 
@@ -25,6 +27,7 @@ button{
 .centro{
     max-height: 124vw;
     overflow: scroll;
+    
 }
 
 .cardsGanhei{
