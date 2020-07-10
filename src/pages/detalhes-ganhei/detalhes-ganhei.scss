@@ -1,5 +1,7 @@
 .bodyy{
     background-color: #E0DAD8;
+     background-repeat: no-repeat;
+    background-size: 150vw;
 }
 
 .cardsGanheii {
@@ -14,7 +16,7 @@
 
 .centrooo {
     margin-top: 4vw;
-    max-height: 125vw;
+    max-height: 71vmax;
     overflow: scroll;
     
 }
@@ -28,6 +30,5 @@
     border-style: solid;
     border-color: #32db64;
     border-radius: 5vw;
-    border-width: thin;
-
+    
   }

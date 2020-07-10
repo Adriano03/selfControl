@@ -24,7 +24,7 @@
         <ion-label floating color="dark">
           Preço..
         </ion-label>
-        <ion-input type="text" mask="0000000000" formControlName="precoP"></ion-input>
+        <ion-input type="tel" mask="0000000000" formControlName="precoP"></ion-input>
       </ion-item>
       <small *ngIf="precoP.hasError('required')&& precoP.touched" ion-text color="danger">
         *Campo Preço é Obrigatório!
@@ -37,7 +37,7 @@
         <ion-label floating color="dark">
           Data..
         </ion-label>
-        <ion-input mask="00/00/0000" type="string" formControlName="dataP"></ion-input>
+        <ion-input mask="00/00/0000" type="tel" formControlName="dataP"></ion-input>
       </ion-item>
       <small *ngIf="dataP.hasError('required')&& dataP.touched" ion-text color="danger">
         *Campo Data é Obrigatório!
